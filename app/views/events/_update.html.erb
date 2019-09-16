@@ -1,0 +1,44 @@
+
+   <%= form_tag url_for(action: 'update'), method: "patch" do |form|%>
+    <input type="hidden" name="authenticity_token" value=<%= form_authenticity_token %> >
+
+
+  <div class="field">
+    <%= label_tag :start_date %>
+    <%= date_field_tag :start_date %>
+  </div>
+
+  <div class="field">
+    <%= label_tag :duration %>
+    <%= time_field_tag :duration %>
+  </div>
+
+  <div class="field">
+    <%= label_tag :title %>
+    <%= text_field_tag :title %>
+  </div>
+
+  <div class="field">
+    <%= label_tag :description %>
+    <%= text_area_tag :description %>
+  </div>
+
+  <div class="field">
+    <%= label_tag :price %>
+    <%= text_field_tag :price %>
+  </div>
+
+  <div class="field">
+    <%= label_tag :location %>
+    <%= text_field_tag :location %>
+  </div>
+
+
+    <div class="field">
+    <input type="hidden" name="event_id" value="<%=@event.id%>">
+  </div>
+
+  <div class="actions">
+    <%= submit_tag "Mettre à jour" %>
+  </div>
+<% end %>
